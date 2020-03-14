@@ -62,6 +62,10 @@
             this.label15 = new System.Windows.Forms.Label();
             this.nud_S2_Delay = new System.Windows.Forms.NumericUpDown();
             this.cb_Run = new System.Windows.Forms.CheckBox();
+            this.sl_PulseLength1 = new System.Windows.Forms.TrackBar();
+            this.sl_CycleLength = new System.Windows.Forms.TrackBar();
+            this.sl_PulseLenght2 = new System.Windows.Forms.TrackBar();
+            this.sl_Delay = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.nud_S1_PulseLength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_CycleLength)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -71,6 +75,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_S2_RandomPulseLength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_S2_PulseLength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_S2_Delay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sl_PulseLength1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sl_CycleLength)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sl_PulseLenght2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sl_Delay)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -130,7 +138,7 @@
             // cb_PowerSensorOut
             // 
             this.cb_PowerSensorOut.AutoSize = true;
-            this.cb_PowerSensorOut.Location = new System.Drawing.Point(12, 116);
+            this.cb_PowerSensorOut.Location = new System.Drawing.Point(344, 27);
             this.cb_PowerSensorOut.Name = "cb_PowerSensorOut";
             this.cb_PowerSensorOut.Size = new System.Drawing.Size(112, 17);
             this.cb_PowerSensorOut.TabIndex = 7;
@@ -149,9 +157,14 @@
             // 
             // nud_S1_PulseLength
             // 
+            this.nud_S1_PulseLength.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.nud_S1_PulseLength.Location = new System.Drawing.Point(81, 13);
             this.nud_S1_PulseLength.Maximum = new decimal(new int[] {
-            30000,
+            5000,
             0,
             0,
             0});
@@ -176,6 +189,11 @@
             // 
             // nud_CycleLength
             // 
+            this.nud_CycleLength.Increment = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.nud_CycleLength.Location = new System.Drawing.Point(81, 40);
             this.nud_CycleLength.Maximum = new decimal(new int[] {
             30000,
@@ -263,6 +281,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.sl_CycleLength);
+            this.groupBox2.Controls.Add(this.sl_PulseLength1);
             this.groupBox2.Controls.Add(this.nud_S1_RandomPulseLength);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
@@ -273,9 +293,9 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.nud_CycleLength);
-            this.groupBox2.Location = new System.Drawing.Point(12, 139);
+            this.groupBox2.Location = new System.Drawing.Point(12, 116);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(326, 116);
+            this.groupBox2.Size = new System.Drawing.Size(433, 116);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sensor 1";
@@ -283,11 +303,6 @@
             // nud_S1_RandomPulseLength
             // 
             this.nud_S1_RandomPulseLength.Location = new System.Drawing.Point(81, 87);
-            this.nud_S1_RandomPulseLength.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
             this.nud_S1_RandomPulseLength.Name = "nud_S1_RandomPulseLength";
             this.nud_S1_RandomPulseLength.Size = new System.Drawing.Size(121, 20);
             this.nud_S1_RandomPulseLength.TabIndex = 16;
@@ -329,6 +344,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.sl_Delay);
+            this.groupBox3.Controls.Add(this.sl_PulseLenght2);
             this.groupBox3.Controls.Add(this.nud_S2_RandomPulseLength);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label11);
@@ -339,9 +356,9 @@
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.nud_S2_Delay);
-            this.groupBox3.Location = new System.Drawing.Point(12, 261);
+            this.groupBox3.Location = new System.Drawing.Point(12, 238);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(326, 116);
+            this.groupBox3.Size = new System.Drawing.Size(433, 116);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sensor 2";
@@ -349,11 +366,6 @@
             // nud_S2_RandomPulseLength
             // 
             this.nud_S2_RandomPulseLength.Location = new System.Drawing.Point(81, 87);
-            this.nud_S2_RandomPulseLength.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
             this.nud_S2_RandomPulseLength.Name = "nud_S2_RandomPulseLength";
             this.nud_S2_RandomPulseLength.Size = new System.Drawing.Size(121, 20);
             this.nud_S2_RandomPulseLength.TabIndex = 16;
@@ -404,9 +416,14 @@
             // 
             // nud_S2_PulseLength
             // 
+            this.nud_S2_PulseLength.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.nud_S2_PulseLength.Location = new System.Drawing.Point(81, 13);
             this.nud_S2_PulseLength.Maximum = new decimal(new int[] {
-            30000,
+            5000,
             0,
             0,
             0});
@@ -449,9 +466,14 @@
             // 
             // nud_S2_Delay
             // 
+            this.nud_S2_Delay.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.nud_S2_Delay.Location = new System.Drawing.Point(81, 40);
             this.nud_S2_Delay.Maximum = new decimal(new int[] {
-            30000,
+            10000,
             0,
             0,
             0});
@@ -468,7 +490,7 @@
             // cb_Run
             // 
             this.cb_Run.AutoSize = true;
-            this.cb_Run.Location = new System.Drawing.Point(131, 116);
+            this.cb_Run.Location = new System.Drawing.Point(344, 52);
             this.cb_Run.Name = "cb_Run";
             this.cb_Run.Size = new System.Drawing.Size(46, 17);
             this.cb_Run.TabIndex = 21;
@@ -476,11 +498,63 @@
             this.cb_Run.UseVisualStyleBackColor = true;
             this.cb_Run.CheckedChanged += new System.EventHandler(this.cb_Run_CheckedChanged);
             // 
+            // sl_PulseLength1
+            // 
+            this.sl_PulseLength1.LargeChange = 200;
+            this.sl_PulseLength1.Location = new System.Drawing.Point(235, 16);
+            this.sl_PulseLength1.Maximum = 5000;
+            this.sl_PulseLength1.Name = "sl_PulseLength1";
+            this.sl_PulseLength1.Size = new System.Drawing.Size(192, 45);
+            this.sl_PulseLength1.SmallChange = 50;
+            this.sl_PulseLength1.TabIndex = 18;
+            this.sl_PulseLength1.TickFrequency = 200;
+            this.sl_PulseLength1.Value = 200;
+            this.sl_PulseLength1.Scroll += new System.EventHandler(this.sl_PulseLength1_Scroll);
+            // 
+            // sl_CycleLength
+            // 
+            this.sl_CycleLength.LargeChange = 500;
+            this.sl_CycleLength.Location = new System.Drawing.Point(235, 67);
+            this.sl_CycleLength.Maximum = 30000;
+            this.sl_CycleLength.Name = "sl_CycleLength";
+            this.sl_CycleLength.Size = new System.Drawing.Size(192, 45);
+            this.sl_CycleLength.SmallChange = 200;
+            this.sl_CycleLength.TabIndex = 19;
+            this.sl_CycleLength.TickFrequency = 1000;
+            this.sl_CycleLength.Value = 2000;
+            this.sl_CycleLength.Scroll += new System.EventHandler(this.sl_CycleLength_Scroll);
+            // 
+            // sl_PulseLenght2
+            // 
+            this.sl_PulseLenght2.LargeChange = 200;
+            this.sl_PulseLenght2.Location = new System.Drawing.Point(235, 13);
+            this.sl_PulseLenght2.Maximum = 5000;
+            this.sl_PulseLenght2.Name = "sl_PulseLenght2";
+            this.sl_PulseLenght2.Size = new System.Drawing.Size(192, 45);
+            this.sl_PulseLenght2.SmallChange = 50;
+            this.sl_PulseLenght2.TabIndex = 20;
+            this.sl_PulseLenght2.TickFrequency = 200;
+            this.sl_PulseLenght2.Value = 200;
+            this.sl_PulseLenght2.Scroll += new System.EventHandler(this.sl_PulseLenght2_Scroll);
+            // 
+            // sl_Delay
+            // 
+            this.sl_Delay.LargeChange = 100;
+            this.sl_Delay.Location = new System.Drawing.Point(234, 64);
+            this.sl_Delay.Maximum = 10000;
+            this.sl_Delay.Name = "sl_Delay";
+            this.sl_Delay.Size = new System.Drawing.Size(192, 45);
+            this.sl_Delay.SmallChange = 50;
+            this.sl_Delay.TabIndex = 21;
+            this.sl_Delay.TickFrequency = 500;
+            this.sl_Delay.Value = 200;
+            this.sl_Delay.Scroll += new System.EventHandler(this.sl_Delay_Scroll);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 384);
+            this.ClientSize = new System.Drawing.Size(456, 361);
             this.Controls.Add(this.cb_Run);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -501,6 +575,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_S2_RandomPulseLength)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_S2_PulseLength)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_S2_Delay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sl_PulseLength1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sl_CycleLength)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sl_PulseLenght2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sl_Delay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -542,6 +620,10 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.NumericUpDown nud_S2_Delay;
         private System.Windows.Forms.CheckBox cb_Run;
+        private System.Windows.Forms.TrackBar sl_CycleLength;
+        private System.Windows.Forms.TrackBar sl_PulseLength1;
+        private System.Windows.Forms.TrackBar sl_Delay;
+        private System.Windows.Forms.TrackBar sl_PulseLenght2;
     }
 }
 

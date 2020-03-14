@@ -185,6 +185,15 @@ namespace PulseGenerator_GPIO
             randomPulses2 = cb_S2_RandomPulses.Checked;
             s1_default = cb_GPIO1_Default.Checked;
             s2_default = cb_GPIO2_Default.Checked;
+
+            sl_Delay.Value = delay;
+            sl_Delay.Maximum = (int)nud_S2_Delay.Maximum;
+            sl_CycleLength.Value = cycleLength;
+            sl_CycleLength.Maximum = (int)nud_CycleLength.Maximum;
+            sl_PulseLength1.Value = pulseLength1;
+            sl_PulseLength1.Maximum = (int)nud_S1_PulseLength.Maximum;
+            sl_PulseLenght2.Value = pulseLength2;
+            sl_PulseLenght2.Maximum = (int)nud_S2_PulseLength.Maximum;
         }
 
         private void GPIO_SettingsChanged(object sender, EventArgs e)
@@ -263,31 +272,22 @@ namespace PulseGenerator_GPIO
 
         private int getMinCycleLength()
         {
-            if (pulseLength1 < pulseLength2 + delay)
-            {
-                //S1: ****____
-                //S2: _**_____
-                // Only S1 Determines cycle length
-                return pulseLength1 + 1;
-            }
-            else
-            {
-                //S1: ****____
-                //S2: _****___
-                // Only S1 determines cycle length
-                return delay + pulseLength2 + 1;
-            }
+            return Math.Max(pulseLength1, pulseLength2 + delay);
         }
 
         private void nud_S1_PulseLength_ValueChanged(object sender, EventArgs e)
         {
             pulseLength1 = (int)nud_S1_PulseLength.Value;
-            nud_CycleLength.Maximum = getMinCycleLength();
+            sl_PulseLength1.Value = pulseLength1;
+            int min = getMinCycleLength();
+            nud_CycleLength.Minimum = min;
+            sl_CycleLength.Minimum = min;
         }
 
         private void nud_CycleLength_ValueChanged(object sender, EventArgs e)
         {
             cycleLength = (int)nud_CycleLength.Value;
+            sl_CycleLength.Value = cycleLength;
         }
 
         private void nud_S1_RandomPulseLength_ValueChanged(object sender, EventArgs e)
@@ -298,13 +298,19 @@ namespace PulseGenerator_GPIO
         private void nud_S2_PulseLength_ValueChanged(object sender, EventArgs e)
         {
             pulseLength2 = (int)nud_S2_PulseLength.Value;
-            nud_CycleLength.Maximum = getMinCycleLength();
+            sl_PulseLenght2.Value = pulseLength2;
+            int min = getMinCycleLength();
+            nud_CycleLength.Minimum = min;
+            sl_CycleLength.Minimum = min;
         }
 
         private void nud_S2_Delay_ValueChanged(object sender, EventArgs e)
         {
             delay = (int)nud_S2_Delay.Value;
-            nud_CycleLength.Maximum = getMinCycleLength();
+            sl_Delay.Value = delay;
+            int min = getMinCycleLength();
+            nud_CycleLength.Minimum = min;
+            sl_CycleLength.Minimum = min;
         }
 
         private void nud_S2_RandomPulseLength_ValueChanged(object sender, EventArgs e)
@@ -339,6 +345,30 @@ namespace PulseGenerator_GPIO
                 run = false;
                 t.Join();
             }
+        }
+
+        private void sl_PulseLength1_Scroll(object sender, EventArgs e)
+        {
+            nud_S1_PulseLength.Value = sl_PulseLength1.Value;
+            nud_S1_PulseLength_ValueChanged(sender, e);
+        }
+
+        private void sl_CycleLength_Scroll(object sender, EventArgs e)
+        {
+            nud_CycleLength.Value = sl_CycleLength.Value;
+            nud_CycleLength_ValueChanged(sender, e);
+        }
+
+        private void sl_PulseLenght2_Scroll(object sender, EventArgs e)
+        {
+            nud_S2_PulseLength.Value = sl_PulseLenght2.Value;
+            nud_S2_PulseLength_ValueChanged(sender, e);
+        }
+
+        private void sl_Delay_Scroll(object sender, EventArgs e)
+        {
+            nud_S2_Delay.Value = sl_Delay.Value;
+            nud_S2_Delay_ValueChanged(sender, e);
         }
     }
 }

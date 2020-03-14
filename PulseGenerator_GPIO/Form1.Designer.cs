@@ -302,6 +302,7 @@
             // 
             // nud_S1_RandomPulseLength
             // 
+            this.nud_S1_RandomPulseLength.Enabled = false;
             this.nud_S1_RandomPulseLength.Location = new System.Drawing.Point(81, 87);
             this.nud_S1_RandomPulseLength.Name = "nud_S1_RandomPulseLength";
             this.nud_S1_RandomPulseLength.Size = new System.Drawing.Size(121, 20);
@@ -334,6 +335,7 @@
             // cb_S1_RandomPulses
             // 
             this.cb_S1_RandomPulses.AutoSize = true;
+            this.cb_S1_RandomPulses.Enabled = false;
             this.cb_S1_RandomPulses.Location = new System.Drawing.Point(9, 66);
             this.cb_S1_RandomPulses.Name = "cb_S1_RandomPulses";
             this.cb_S1_RandomPulses.Size = new System.Drawing.Size(100, 17);
@@ -365,6 +367,7 @@
             // 
             // nud_S2_RandomPulseLength
             // 
+            this.nud_S2_RandomPulseLength.Enabled = false;
             this.nud_S2_RandomPulseLength.Location = new System.Drawing.Point(81, 87);
             this.nud_S2_RandomPulseLength.Name = "nud_S2_RandomPulseLength";
             this.nud_S2_RandomPulseLength.Size = new System.Drawing.Size(121, 20);
@@ -397,6 +400,7 @@
             // cb_S2_RandomPulses
             // 
             this.cb_S2_RandomPulses.AutoSize = true;
+            this.cb_S2_RandomPulses.Enabled = false;
             this.cb_S2_RandomPulses.Location = new System.Drawing.Point(9, 66);
             this.cb_S2_RandomPulses.Name = "cb_S2_RandomPulses";
             this.cb_S2_RandomPulses.Size = new System.Drawing.Size(100, 17);
